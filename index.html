@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Rubik+Marker+Hatch&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Rubik+Marker+Hatch&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -13,29 +13,31 @@
 	<title>Alexia</title>
 </head>
 <body>
+	<div class="gridPadre">
 	<header>
 		<nav>
 			<div class="Titulo" id="Titulo">
 				<h1>Alexia</h1>
 			</div>
-			<div id="UserTitulo">
+			<div class="userTitulo" id="UserTitulo">
 			</div>
 		</nav>
 	</header>
 	<main>
-		<div id="contenedor">
-			<form id="formLogin">
+		<div class="contenedor" id="contenedor">
+			<form class="formLogin" id="formLogin">
 				<label for="user">
 					Bienvenido! Ingrese su Usuario
 				</label>
-				<input id="user" type="text" placeholder="Usuario">
-				<input type="submit" value="Ingresar">
+				<input class="user" id="user" type="text" placeholder="Usuario">
+				<input class="btn" type="submit" value="Ingresar">
 			</form>
 		</div>
 	</main>
 	<footer>
-		<p>Alexia Paiva.Inc</p>
+		<p>Alexia © Todos Los Derechos Reservados 2022</p>
 	</footer>
 	<script src="js/main.js"></script>
+	</div>
 </body>
 </html>

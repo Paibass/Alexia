@@ -48,6 +48,15 @@ function comprobarProfesor() {
 		  buttons: false,
 		  timer: 1000,
 		});
+			Toastify({
+        text: "Pss! Abre la consola para ver los usuarios",
+        duration: 2000,
+        gravity: 'top',
+        position: 'right',
+        style: {
+            background: 'linear-gradient(to right, #7d47ba, #4e0b9a)'
+        }
+    }).showToast(); 
 		}
 	});
 }
@@ -70,8 +79,9 @@ function loginProfesor(){
 	seccionBtn.appendChild(btnAgregarAlumno);
 
 	const alumnos = JSON.parse(localStorage.getItem(nombreUsuario));
+	let vacio = alumnos.length;
 
-	if (alumnos == null) {
+	if (alumnos == null || vacio == 0 ) {
 		Toastify({
         text: "ERROR! No tienes Alumnos Cargados",
         duration: 3000,
