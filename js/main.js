@@ -1,5 +1,3 @@
-
-
 class Alumno{
 	constructor(nombre,apellido,dni){
 		this.nombre = nombre;
@@ -7,7 +5,6 @@ class Alumno{
 		this.dni = dni;
 	}
 }
-(async () => {
 const URL = "../Alexia/json/profesores.json";
 
 document.getElementById('formLogin').addEventListener("submit", comprobarLogin);
@@ -15,8 +12,12 @@ document.getElementById('formLogin').addEventListener("submit", comprobarLogin);
 let userList = [];
 let nombreUsuario;
 
+
 function guardarUsers( users ) {
 	userList = users;
+	userList.forEach(prof => {
+		console.log(prof.user);
+	})
 }
 
 function comprobarLogin(e){
@@ -59,8 +60,8 @@ function loginProfesor(){
 	loginProfesor.innerHTML =` 
 		<div class = "col1">
 			<div id ="seccionBoton"></div>
-		</div>
-		<div class = "col2"></div> 
+			<div id="colAlumnos"></div>
+		</div> 
 	 `;
 	let seccionBtn = document.getElementById("seccionBoton");
 	const btnAgregarAlumno = document.createElement("button");
@@ -80,31 +81,86 @@ function loginProfesor(){
             background: 'linear-gradient(to right, #e66465, #b30f0f)'
         }
     }).showToast(); 
-}
+	}
+	else{
+		mostrarAlumnos(alumnos);
+	}
 }	
 
-function agregarAlumno(){
-	const { value: nombreAlumno } = await Swal.fire({
-  title: 'Ingresa nombre del Alumno',
-  input: 'text',
-  inputPlaceholder: 'Nombre',
-  showCancelButton: true,
-  inputValidator: (value) => {
-    if (!value) {
-      return 'Por favor Escriba el Nombre'
-    }
-  }
-}).then(
-{
-	if (nombreAlumno) 
-	{
-  		Swal.fire(`Nombre del Alumno : ${nombreAlumno}`);
-	}	
-})
+function agregarAlumno(alumnos){
+	Swal.fire({
+  title: 'Ficha Alumno',
+  html: '<form><input placeholder="Nombre" id="inputNombre" type="text"><input placeholder="Apellido" id="inputApellido" type="text"><input placeholder="DNI" id="inputDNI" type="text"></form>',
+  confirmButtonText: 'Agregar'
+}).then( () => {
+	const nombre = document.getElementById("inputNombre").value;
+	const apellido = document.getElementById("inputApellido").value;
+	const dni = document.getElementById("inputDNI").value;
+
+	const alumno = new Alumno(nombre, apellido, dni);
+
+	pushAlumno(alumno);
+	})
+}
+
+function pushAlumno(alumno){
+	const alumnosEnLS = JSON.parse(localStorage.getItem(nombreUsuario));
+
+	 if (alumnosEnLS == null){
+	 	localStorage.setItem(nombreUsuario, JSON.stringify([alumno]));
+	 	mostrarAlumnos([alumno]);
+	 }
+	 else{
+	 	alumnosEnLS.push(alumno);
+	 	localStorage.setItem(nombreUsuario, JSON.stringify(alumnosEnLS));
+	 	mostrarAlumnos(alumnosEnLS);
+	 }	
+}
+
+function mostrarAlumnos(alumnos){
+	let listadoAlumnos = document.getElementById("colAlumnos");
+	listadoAlumnos.innerHTML = "";
+	let ul = document.createElement("ul");
+	listadoAlumnos.appendChild(ul);
+
+	alumnos.forEach(alumno => {
+		let li = document.createElement("li")
+		li.innerHTML = `${alumno.nombre} ${alumno.apellido} - ${alumno.dni}`
+		const botonBorrar = document.createElement("button");
+		botonBorrar.innerText = "Borrar";
+		botonBorrar.addEventListener("click", () => {
+			Swal.fire({
+				  title: 'Estas Seguro?',
+				  text: "Tendras que agregarlo devuelta si lo borras!",
+				  icon: 'warning',
+				  showCancelButton: true,
+				  confirmButtonColor: '#3085d6',
+				  cancelButtonColor: '#d33',
+				  confirmButtonText: 'Si, borralo!'
+				}).then((result) => {
+				  if (result.isConfirmed) {
+				  	borrarAlumno(alumno);
+				    Swal.fire(
+				      'Borrado!',
+				      'El alumno ha sido borrado.',
+				      'success'
+				    )
+				  }
+				})
+		})
+		li.appendChild(botonBorrar);
+		ul.appendChild(li);
+	})
 }	
+
+function borrarAlumno(alumno){
+	const alumnosEnLS = JSON.parse(localStorage.getItem(nombreUsuario));
+	const borrado = alumnosEnLS.filter(pupilo  => pupilo.nombre != alumno.nombre);
+	localStorage.setItem(nombreUsuario, JSON.stringify(borrado));
+	mostrarAlumnos(borrado);
+}
 fetch( URL )
 	.then( res => res.json() )
 	.then( data => { guardarUsers( data ) } )
 	.catch( err => { console.log("Hubo un error: ");})
 
-})()
