@@ -65,6 +65,7 @@ function loginProfesor(){
 	let usuarioProfesor = document.getElementById("UserTitulo");
 	usuarioProfesor.innerHTML = `Hola, ${nombreUsuario}`;
 	let loginProfesor = document.getElementById("contenedor");
+	loginProfesor.classname = "Veggies";
 	loginProfesor.innerHTML = "";
 	loginProfesor.innerHTML =` 
 		<div class = "col1">

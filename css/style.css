@@ -6,24 +6,32 @@
 	box-sizing: border-box;
 }
 
-
-html{
-	height:100vh;
+body{
+	display: flex;
+	flex-direction: column;
+	  background-color: #eff6ee;
 }
-
 .gridPadre{
+	position: relative;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	 display: grid;
   grid-template-areas: "header" "main" "footer";
   justify-items: stretch;
 }
 
 header{
+	  position: fixed;
+  		top: 0;
+  left: 0;
+  right: 0;
 	grid-area: header;
 	padding: 15px;
 	background-color: #84ba47;
-	box-shadow: -1px 5px 9px -2px rgba(0,0,0,0.75);
+	box-shadow: 4px 5px 5px -5px rgba(0,0,0,0.75);
+	display: flex;
+	flex-direction: column;
+	 z-index: 1000;
 
 }
 nav {
@@ -44,22 +52,33 @@ nav {
 	letter-spacing: 5px;
 	font-size: 2rem;
 	color: #fff;
+	transition: color 0.3s ease-in-out;
 
 }
 
+.Titulo:hover{
+	color: #a76aec;
+
+}
+
+main{	
+	margin-top: 5.5rem;
+	grid-area: main;
+	background-color: #eff6ee;
+	flex-grow:  1;
+	
+}
+
 .contenedor{
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4.5rem;
+  display: flex;
 }
 
 .formLogin{
 	background-color: #fff;
 	border-radius:  5%;
-	margin-top: 9%;
-	margin-bottom: 8%;
-	padding: 10px 5px;
 	border: 2px solid black;
 	display: flex;
 	flex-wrap: nowrap;
@@ -67,20 +86,19 @@ nav {
 	align-items: center;
 	justify-content: space-evenly;
 	flex-direction: column;
-	width: 30rem;
-	height: 30rem;
+  width: 36rem;
+  height: 29.8rem;
 }
 
 .formLogin label{
 	font-family: 'DynoPuff', cursive;
-	font-size: 1.5rem;
+	font-size: 2rem;
 	margin: 10px 0px 30px;
 }
 
 .formLogin input{
 	text-align: center;
 	font-size: 1.5rem;
-	margin: 0px 0px 30px;
 	width: 50%;
 }
 
@@ -97,6 +115,7 @@ nav {
 	background-color: #7d47ba;
 	border: none;
 	border-radius:  10px;
+	margin-bottom: -50px;
 }
 
 .btn:hover{
@@ -105,18 +124,17 @@ background-color: #4e0b9a;
   
 }
 
-main{
-	grid-area: main;
-	background-color: #eff6ee;
-}
+
 
 footer {
-	padding-top: 6px;
-	padding-bottom: 6px;
-	grid-area: footer;
+	position: fixed;
+  bottom: 0; left: 0; z-index: 9;
+  	width: 100%; height: 40px;
+  	  display: flex;
+  align-items: center;
+  justify-content: center;
 	background-color: #7d47ba;
 	color: white;
 	font-family: 'DynoPuff', cursive;
 	font-size: 1.2rem;
-	text-align: center;
 }
