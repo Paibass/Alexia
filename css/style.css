@@ -1,181 +1,184 @@
-*{
-	padding: 0;
-	margin: 0;
-	text-decoration: none;
-	list-style: none;
-	box-sizing: border-box;
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
 }
 
-body{
-	display: flex;
-	flex-direction: column;
-	  background-color: #eff6ee;
-}
-.gridPadre{
-	position: relative;
-	width: 100%;
-	height: 100vh;
-	 display: grid;
-  grid-template-areas: "header" "main" "footer";
-  justify-items: stretch;
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #eff6ee;
 }
 
-header{
-	  position: fixed;
-  		top: 0;
-  left: 0;
-  right: 0;
-	grid-area: header;
-	padding: 15px;
-	background-color: #84ba47;
-	box-shadow: 4px 5px 5px -5px rgba(0,0,0,0.75);
-	display: flex;
-	flex-direction: column;
-	 z-index: 1000;
+.gridPadre {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "header""main""footer";
+    justify-items: stretch;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    grid-area: header;
+    padding: 15px;
+    background-color: #84ba47;
+    box-shadow: 4px 5px 5px -5px rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
 
 }
+
 nav {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
 }
 
-.userTitulo{
-	color: #fff;
-	font-family:'DynoPuff', cursive;
-	font-family: 1.4rem;
+.userTitulo {
+    color: #fff;
+    font-family: 'DynoPuff', cursive;
+    font-family: 1.4rem;
 }
 
-.a{
-	color: #fff;
-	transition: color 0.3s ease-in-out;
+.a {
+    color: #fff;
+    transition: color 0.3s ease-in-out;
 }
 
-.a:hover{
-	color: #a76aec;
-}
-.Titulo{
-	font-family:'Rubik Marker Hatch', cursive;
-	letter-spacing: 5px;
-	font-size: 2rem;
-	color: #fff;
-	
-
+.a:hover {
+    color: #a76aec;
 }
 
+.Titulo {
+    font-family: 'Rubik Marker Hatch', cursive;
+    letter-spacing: 5px;
+    font-size: 2rem;
+    color: #fff;
 
-main{	
-	margin-top: 5.5rem;
-	grid-area: main;
-	background-color: #eff6ee;
-	flex-grow:  1;
-	
-}
-
-.contenedor{
-  justify-content: center;
-  align-items: center;
-  margin-top: 4.5rem;
-  display: flex;
-}
-
-.formLogin{
-	background-color: #fff;
-	border-radius:  5%;
-	border: 2px solid black;
-	display: flex;
-	flex-wrap: nowrap;
-	text-align: center;
-	align-items: center;
-	justify-content: space-evenly;
-	flex-direction: column;
-  width: 36rem;
-  height: 29.8rem;
-}
-
-.formLogin label{
-	font-family: 'DynoPuff', cursive;
-	font-size: 2rem;
-	margin: 10px 0px 30px;
-}
-
-.formLogin input{
-	text-align: center;
-	font-size: 1.5rem;
-	width: 50%;
-}
-
-.user{
-	font-family: 'DynoPuff', cursive;
-	border-radius: 10px;
 
 }
 
-.btn{
-	font-family: 'DynoPuff', cursive;
-	color: white;
-	padding: 5px;
-	background-color: #7d47ba;
-	border: none;
-	border-radius:  10px;
-	margin-bottom: -50px;
+
+main {
+    margin-top: 5.5rem;
+    grid-area: main;
+    background-color: #eff6ee;
+    flex-grow: 1;
+
 }
 
-.btn:hover{
-animation: 1.5s ease-out;
-background-color: #4e0b9a;	
-  
+.contenedor {
+    justify-content: center;
+    align-items: center;
+    margin-top: 4.5rem;
+    display: flex;
 }
 
-.contenedor1{
-	  margin-top: -8rem;
+.formLogin {
+    background-color: #fff;
+    border-radius: 5%;
+    border: 2px solid black;
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 36rem;
+    height: 29.8rem;
+}
+
+.formLogin label {
+    font-family: 'DynoPuff', cursive;
+    font-size: 2rem;
+    margin: 10px 0px 30px;
+}
+
+.formLogin input {
+    text-align: center;
+    font-size: 1.5rem;
+    width: 50%;
+}
+
+.user {
+    font-family: 'DynoPuff', cursive;
+    border-radius: 10px;
+
+}
+
+.btn {
+    font-family: 'DynoPuff', cursive;
+    color: white;
+    padding: 5px;
+    background-color: #7d47ba;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: -50px;
+}
+
+.btn:hover {
+    animation: 1.5s ease-out;
+    background-color: #4e0b9a;
+
+}
+
+.contenedor1 {
+    margin-top: -8rem;
     display: flex;
     align-content: space-between;
     justify-content: center;
 }
 
-.col1{
-	width: 75%;
+.col1 {
+    width: 75%;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 10px;	
+    border-radius: 10px;
 }
 
-.seccionBoton{
-	width: 100%;
+.seccionBoton {
+    width: 100%;
     border-bottom: 1px solid black;
     padding: 10px 80px;
     text-align: center;
 }
 
-.seccionBoton button{
-	font-size: 1.5rem;
-		font-family: 'DynoPuff', cursive;
-	color: white;
-	padding: 5px;
-	background-color: #7d47ba;
-	border: none;
-	border-radius:  10px;
-	cursor: pointer;
+.seccionBoton button {
+    font-size: 1.5rem;
+    font-family: 'DynoPuff', cursive;
+    color: white;
+    padding: 5px;
+    background-color: #7d47ba;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
-.seccionBoton button:hover{
-	animation: 1.5s ease-out;
-background-color: #4e0b9a;
-transform: scale(1.1);
+.seccionBoton button:hover {
+    animation: 1.5s ease-out;
+    background-color: #4e0b9a;
+    transform: scale(1.1);
 }
 
-.colAlumnos{
-	    padding: 10px;
+.colAlumnos {
+    padding: 10px;
     width: 100%;
 }
 
-.colAlumnos li{
-	font-family: 'DynoPuff', cursive;
-background-color: #c4ea7f;
+.colAlumnos li {
+    font-family: 'DynoPuff', cursive;
+    background-color: #c4ea7f;
     display: flex;
     padding: 20px;
     margin: 10px 0;
@@ -185,72 +188,91 @@ background-color: #c4ea7f;
     justify-content: space-between;
 }
 
-.colAlumnos li:hover{
-	transform: scale(1.01);
-	color: #7d47ba;
+.colAlumnos li:hover {
+    transform: scale(1.01);
+    color: #7d47ba;
 }
 
-.colAlumnos li button{
-	border: none;
-	background-color: red;
-	color: white;
-	cursor: pointer;
-	padding: 5px;
-	border-radius: 10px;
+.colAlumnos li button {
+    border: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
 }
 
-.colAlumnos li button:hover{
-	transform: scale(1.03);
+.colAlumnos li button:hover {
+    transform: scale(1.03);
 }
 
 footer {
-	position: fixed;
-  bottom: 0; left: 0; z-index: 9;
-  	width: 100%; height: 40px;
-  	  display: flex;
-  align-items: center;
-  justify-content: center;
-	background-color: #7d47ba;
-	color: white;
-	font-family: 'DynoPuff', cursive;
-	font-size: 1.2rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7d47ba;
+    color: white;
+    font-family: 'DynoPuff', cursive;
+    font-size: 1.2rem;
 }
 
-footer img{
-	margin-left: 10px;
+footer img {
+    margin-left: 10px;
 }
 
-@media (max-width:  630px){
-	.Titulo{
-		font-size: 1.5rem;
-	}
+@media (max-width: 630px) {
+    .Titulo {
+        font-size: 1.5rem;
+    }
 
-	.userTitulo{
-		font-size: 1rem;
-		font-family:'DynoPuff', monospace;
-	}
+    .userTitulo {
+        font-size: 1rem;
+        font-family: 'DynoPuff', monospace;
+    }
 
-	.formLogin{
-		font-family:'DynoPuff', monospace;
-		  width: 20rem;
-  height: 26.8rem;
-	}
+    .formLogin {
+        font-family: 'DynoPuff', monospace;
+        width: 20rem;
+        height: 26.8rem;
+    }
 
-	.formLogin label{
-		font-family:'DynoPuff', monospace;
-		font-size: 1.4rem;
-	}
+    .formLogin label {
+        font-family: 'DynoPuff', monospace;
+        font-size: 1.4rem;
+    }
 
-	main{
-		margin-top: 0;
-	}
+    main {
+        margin-top: 0;
+    }
 
-	.contenedor1{
-		margin-top: 0;
-	}
-	
-	footer{
-		font-family:'DynoPuff', monospace;
-		font-size: .8rem;
-	}
+    .user {
+        font-family: 'DynoPuff', monospace;
+    }
+
+    .contenedor1 {
+        margin-top: 0;
+    }
+
+    .colAlumnos li {
+        font-family: 'DynoPuff', monospace;
+    }
+
+    .seccionBoton button {
+        font-family: 'DynoPuff', monospace;
+    }
+
+    .btn {
+        font-family: 'DynoPuff', monospace;
+    }
+
+    footer {
+        font-family: 'DynoPuff', monospace;
+        font-size: .8rem;
+    }
 }
