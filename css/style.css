@@ -227,14 +227,17 @@ footer img{
 
 	.userTitulo{
 		font-size: 1rem;
+		font-family:'DynoPuff', monospace;
 	}
 
 	.formLogin{
+		font-family:'DynoPuff', monospace;
 		  width: 20rem;
   height: 26.8rem;
 	}
 
 	.formLogin label{
+		font-family:'DynoPuff', monospace;
 		font-size: 1.4rem;
 	}
 
@@ -247,6 +250,7 @@ footer img{
 	}
 	
 	footer{
+		font-family:'DynoPuff', monospace;
 		font-size: .8rem;
 	}
 }
