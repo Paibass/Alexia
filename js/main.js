@@ -61,16 +61,25 @@ function comprobarProfesor() {
 	});
 }
 
+function agregarClass(){
+	let loginProfesor = document.getElementsByClassName("contenedor");
+
+	for(i = 0; i < loginProfesor.length; i++){
+		loginProfesor[i].classList.replace('contenedor', 'contenedor1');
+	}
+
+}
+
 function loginProfesor(){
 	let usuarioProfesor = document.getElementById("UserTitulo");
 	usuarioProfesor.innerHTML = `Hola, ${nombreUsuario}`;
 	let loginProfesor = document.getElementById("contenedor");
-	loginProfesor.classname = "Veggies";
+	agregarClass();
 	loginProfesor.innerHTML = "";
 	loginProfesor.innerHTML =` 
 		<div class = "col1">
-			<div id ="seccionBoton"></div>
-			<div id="colAlumnos"></div>
+			<div class ="seccionBoton" id ="seccionBoton"></div>
+			<div class="colAlumnos" id="colAlumnos"></div>
 		</div> 
 	 `;
 	let seccionBtn = document.getElementById("seccionBoton");
@@ -80,9 +89,8 @@ function loginProfesor(){
 	seccionBtn.appendChild(btnAgregarAlumno);
 
 	const alumnos = JSON.parse(localStorage.getItem(nombreUsuario));
-	let vacio = alumnos.length;
 
-	if (alumnos == null || vacio == 0 ) {
+	if (alumnos == null) {
 		Toastify({
         text: "ERROR! No tienes Alumnos Cargados",
         duration: 3000,
@@ -92,6 +100,17 @@ function loginProfesor(){
             background: 'linear-gradient(to right, #e66465, #b30f0f)'
         }
     }).showToast(); 
+	}
+	else if(alumnos.length == 0){
+				Toastify({
+        text: "ERROR! No tienes Alumnos Cargados",
+        duration: 3000,
+        gravity: 'top',
+        position: 'right',
+        style: {
+            background: 'linear-gradient(to right, #e66465, #b30f0f)'
+        }
+    }).showToast();
 	}
 	else{
 		mostrarAlumnos(alumnos);

@@ -47,19 +47,23 @@ nav {
 	font-family: 1.4rem;
 }
 
+.a{
+	color: #fff;
+	transition: color 0.3s ease-in-out;
+}
+
+.a:hover{
+	color: #a76aec;
+}
 .Titulo{
 	font-family:'Rubik Marker Hatch', cursive;
 	letter-spacing: 5px;
 	font-size: 2rem;
 	color: #fff;
-	transition: color 0.3s ease-in-out;
+	
 
 }
 
-.Titulo:hover{
-	color: #a76aec;
-
-}
 
 main{	
 	margin-top: 5.5rem;
@@ -124,7 +128,80 @@ background-color: #4e0b9a;
   
 }
 
+.contenedor1{
+	  margin-top: -8rem;
+    display: flex;
+    align-content: space-between;
+    justify-content: center;
+}
 
+.col1{
+	width: 75%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;	
+}
+
+.seccionBoton{
+	width: 100%;
+    border-bottom: 1px solid black;
+    padding: 10px 80px;
+    text-align: center;
+}
+
+.seccionBoton button{
+	font-size: 1.5rem;
+		font-family: 'DynoPuff', cursive;
+	color: white;
+	padding: 5px;
+	background-color: #7d47ba;
+	border: none;
+	border-radius:  10px;
+	cursor: pointer;
+}
+
+.seccionBoton button:hover{
+	animation: 1.5s ease-out;
+background-color: #4e0b9a;
+transform: scale(1.1);
+}
+
+.colAlumnos{
+	    padding: 10px;
+    width: 100%;
+}
+
+.colAlumnos li{
+	font-family: 'DynoPuff', cursive;
+background-color: #c4ea7f;
+    display: flex;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.colAlumnos li:hover{
+	transform: scale(1.01);
+	color: #7d47ba;
+}
+
+.colAlumnos li button{
+	border: none;
+	background-color: red;
+	color: white;
+	cursor: pointer;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.colAlumnos li button:hover{
+	transform: scale(1.03);
+}
 
 footer {
 	position: fixed;
@@ -137,4 +214,39 @@ footer {
 	color: white;
 	font-family: 'DynoPuff', cursive;
 	font-size: 1.2rem;
+}
+
+footer img{
+	margin-left: 10px;
+}
+
+@media (max-width:  630px){
+	.Titulo{
+		font-size: 1.5rem;
+	}
+
+	.userTitulo{
+		font-size: 1rem;
+	}
+
+	.formLogin{
+		  width: 20rem;
+  height: 26.8rem;
+	}
+
+	.formLogin label{
+		font-size: 1.4rem;
+	}
+
+	main{
+		margin-top: 0;
+	}
+
+	.contenedor1{
+		margin-top: 0;
+	}
+	
+	footer{
+		font-size: .8rem;
+	}
 }
